@@ -3,13 +3,39 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --page: #f9fefa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-page: var(--page);
+  --font-sans: var(--font-madani-arabic);
+
+  /* brand primary — green, drives active nav pill, View All, positive stats, green dots */
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-500: #16a34a;
+  --color-primary-600: #15803d;
+  --color-primary-700: #166534;
+  --color-primary: var(--color-primary-500);
+  --color-primary-foreground: #ffffff;
+
+  /* semantic status colors — used in status pills and stat-card icon chips */
+  --color-info: #2563eb;
+  --color-info-bg: #dbeafe;
+  --color-warning: #f97316;
+  --color-warning-bg: #ffedd5;
+  --color-danger: #ef4444;
+  --color-danger-bg: #fee2e2;
+  --color-maroon: #7f1d1d;
+  --color-maroon-bg: #fee2e2;
+  --color-neutral: #6b7280;
+  --color-neutral-bg: #f3f4f6;
+
+  /* radius */
+  --radius-card: 1rem;
+  --radius-pill: 9999px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +46,101 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), "Segoe UI", Tahoma, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-primary {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-primary-100);
+}
+
+.scrollbar-primary::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+.scrollbar-primary::-webkit-scrollbar-track {
+  background: var(--color-primary-100);
+  border-radius: 9999px;
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 9999px;
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary-600);
+}
+
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-dropdown-in {
+  animation: dropdown-in 140ms ease-out;
+  transform-origin: top;
+}
+
+@keyframes transfer-line-flow {
+  to {
+    background-position: 0 -12px;
+  }
+}
+
+.animate-transfer-line {
+  background-image: repeating-linear-gradient(to bottom, currentColor 0 4px, transparent 4px 8px);
+  animation: transfer-line-flow 0.6s linear infinite;
+}
+
+@keyframes stat-card-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+.animate-stat-pulse {
+  animation: stat-card-pulse 3.5s ease-in-out infinite;
+}
+
+@keyframes logo-shine {
+  0%,
+  20% {
+    transform: translateX(-300%) skewX(-12deg);
+  }
+  70%,
+  100% {
+    transform: translateX(500%) skewX(-12deg);
+  }
+}
+
+.animate-logo-shine {
+  animation: logo-shine 3.2s ease-in-out infinite;
 }

@@ -1,0 +1,88 @@
+import type { MergedWarehouseGroup } from "./types";
+
+export const MERGED_WAREHOUSE_GROUPS: MergedWarehouseGroup[] = [
+  {
+    id: "1",
+    name: "بيسيسي",
+    members: [
+      {
+        id: "1-1",
+        rowNumber: 1,
+        warehouseName: "متجر أحمد سلة",
+        storeName: "-",
+        country: "Saudi Arabia",
+        city: "Riyadh",
+        address1: "Riyadh",
+        createdAtDisplay: "2026-05-18T12:48:30.000000Z",
+        channel: "none",
+      },
+      {
+        id: "1-2",
+        rowNumber: 2,
+        warehouseName: "Gaza-Tal Al-Hawa",
+        storeName: "-",
+        country: "Saudi Arabia",
+        city: "Riyadh",
+        address1: "Gaza-Tal Al-Hawa",
+        createdAtDisplay: "2026-05-18T13:13:38.000000Z",
+        channel: "none",
+      },
+    ],
+  },
+  {
+    id: "2",
+    name: "منتج جديد",
+    members: [
+      {
+        id: "2-1",
+        rowNumber: 1,
+        warehouseName: "main warehouse",
+        storeName: "-",
+        country: "Saudi Arabia",
+        city: "Riyadh",
+        address1: "nasser street",
+        createdAtDisplay: "2026-04-07T11:08:55.000000Z",
+        channel: "zid",
+      },
+      {
+        id: "2-2",
+        rowNumber: 2,
+        warehouseName: "warehouse-dqq",
+        storeName: "-",
+        country: "Saudi Arabia",
+        city: "Al Hariq",
+        address1: "address-test",
+        createdAtDisplay: "2026-04-16T10:12:04.000000Z",
+        channel: "zid",
+      },
+    ],
+  },
+  {
+    id: "3",
+    name: "retest3",
+    members: [
+      {
+        id: "3-1",
+        rowNumber: 1,
+        warehouseName: "test 1",
+        storeName: "-",
+        country: "Saudi Arabia",
+        city: "Riyadh",
+        address1: "nasser street",
+        createdAtDisplay: "2026-04-07T11:07:12.000000Z",
+        channel: "zid",
+      },
+      {
+        id: "3-2",
+        rowNumber: 2,
+        warehouseName: "Gaza-Tal Al-Hawa",
+        storeName: "-",
+        country: "Saudi Arabia",
+        city: "Riyadh",
+        address1: "Gaza-Tal Al-Hawa",
+        createdAtDisplay: "2026-05-18T16:01:03.000000Z",
+        channel: "zid",
+      },
+    ],
+  },
+];

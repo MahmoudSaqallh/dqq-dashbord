@@ -1,0 +1,1 @@
+export const SEND_NOTIFICATION_EMPLOYEE_COUNT = 9;
